@@ -70,9 +70,9 @@ function App() {
           todos.filter(t => !t.completed).map(todo => (
             <div key={todo.id} className="todo-card">
               <span>{todo.title}</span>
-              <button onClick={() => completeTodo(todo.id)}><FaRegCheckSquare /></button>
-              <button onClick={() => updateTodo(todo.id, prompt("New tittle:", todo.title))}><FaEdit/></button>
-              <button onClick={() => deleteTodo(todo.id)}><MdDeleteForever /></button>
+              <button onClick={() => completeTodo(todo.id)} className="check"><FaRegCheckSquare /></button>
+              <button onClick={() => updateTodo(todo.id, prompt("New tittle:", todo.title))} className="edit"><FaEdit/></button>
+              <button onClick={() => deleteTodo(todo.id)} className="delete"><MdDeleteForever /></button>
             </div>
           ))
         }
@@ -83,7 +83,7 @@ function App() {
           todos.filter(t => t.completed).map(todo => (
             <div key={todo.id} className="todo-card">
               <span>{todo.title}</span>
-              <button onClick={() => deleteTodo(todo.id)}>Delete</button>
+              <button onClick={() => deleteTodo(todo.id)} className="delete"><MdDeleteForever /></button>
             </div>
           ))
         }

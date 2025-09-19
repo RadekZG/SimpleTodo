@@ -17,6 +17,7 @@ h1{
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+    font-size: 3rem;
 }
 
 form{
@@ -62,14 +63,76 @@ h2{
   
 }
 
-.todo-card button:hover{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
 .add{
   cursor: pointer;
 }
 
 .add:hover{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: 
+  rgba(0, 0, 0, 0.15) 0px 20px 25px,
+  rgba(0, 0, 0, 0.08) 0px -6px 15px,
+  rgba(0, 0, 0, 0.08) 0px 2px 3px,
+  rgba(0, 0, 0, 0.10) 0px 6px 7px,
+  rgba(0, 0, 0, 0.05) 0px -1px 2px;
+}
+
+.check{
+  transition: transform .2s; /* Animation */
+}
+
+.check:hover{
+  box-shadow: 
+  rgba(0, 0, 0, 0.15) 0px 20px 25px,
+  rgba(0, 0, 0, 0.08) 0px -6px 15px,
+  rgba(0, 0, 0, 0.08) 0px 2px 3px,
+  rgba(0, 0, 0, 0.10) 0px 6px 7px,
+  rgba(0, 0, 0, 0.05) 0px -1px 2px;
+  transform: scale(1.2);
+}
+
+.edit{
+  transition: transform .2s; /* Animation */
+}
+
+.edit:hover{
+  box-shadow: 
+  rgba(0, 0, 0, 0.15) 0px 20px 25px,
+  rgba(0, 0, 0, 0.08) 0px -6px 15px,
+  rgba(0, 0, 0, 0.08) 0px 2px 3px,
+  rgba(0, 0, 0, 0.10) 0px 6px 7px,
+  rgba(0, 0, 0, 0.05) 0px -1px 2px;
+  transform: scale(1.2);
+}
+
+.delete{
+  transition: transform .2s; /* Animation */
+}
+
+.delete:hover{
+  box-shadow: 
+  rgba(0, 0, 0, 0.15) 0px 20px 25px,
+  rgba(0, 0, 0, 0.08) 0px -6px 15px,
+  rgba(0, 0, 0, 0.08) 0px 2px 3px,
+  rgba(0, 0, 0, 0.10) 0px 6px 7px,
+  rgba(0, 0, 0, 0.05) 0px -1px 2px;
+  transform: scale(1.2);
+}
+
+
+.github-corner:hover .octo-arm{
+    animation:octocat-wave 560ms ease-in-out
+}
+
+@keyframes octocat-wave{
+    0%,100%{transform:rotate(0)}
+    20%,60%{transform:rotate(-25deg)}
+    40%,80%{transform:rotate(10deg)}}
+
+@media (max-width:500px){
+    .github-corner:hover .octo-arm{
+        animation:none
+    }
+    .github-corner .octo-arm{
+        animation:octocat-wave 560ms ease-in-out
+    }
 }
