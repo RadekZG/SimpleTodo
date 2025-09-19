@@ -1,33 +1,43 @@
 body {
-    --color: #E1E1E1;
-    background-color: #F3F3F3;
-    background-image: 
-      linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
-      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
-    background-size: 55px 55px;
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    /* remove flex centering */
-    display: block;
-    height: auto;
-    padding: 20px;  /* optional: spacing from edges */
+  --color: #E1E1E1;
+  background-color: #F3F3F3;
+  background-image: 
+    linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+  background-size: 55px 55px;
+  margin: 0;
+  font-family: 'Manrope';
+  display: block;
+  height: auto;
+  padding: 20px;  
+}
+
+.input{
+  height: 30px;
+  width: 220px;
+  border-radius: 6px;
+  text-align:center;
+  font-size: 19px;
+
 }
 
 h1{
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
-    font-size: 3rem;
+  display: flex;
+  font-family: 'Manrope';
+  justify-content: center;
+  margin-top: 2rem;
+  font-size: 3rem;
 }
 
 form{
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 h2{
-    display: flex;
-    justify-content: center;
+  font-family: 'Manrope';
+  display: flex;
+  justify-content: center;
 }
 
 .todo-container {
@@ -44,7 +54,7 @@ h2{
   margin: 10px 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   min-height: 70px;
 }
 
@@ -65,6 +75,7 @@ h2{
 
 .add{
   cursor: pointer;
+  transition: transform .2s;
 }
 
 .add:hover{
@@ -74,6 +85,7 @@ h2{
   rgba(0, 0, 0, 0.08) 0px 2px 3px,
   rgba(0, 0, 0, 0.10) 0px 6px 7px,
   rgba(0, 0, 0, 0.05) 0px -1px 2px;
+  
 }
 
 .check{
@@ -135,4 +147,8 @@ h2{
     .github-corner .octo-arm{
         animation:octocat-wave 560ms ease-in-out
     }
+}
+
+.completed{
+  text-decoration: line-through;
 }

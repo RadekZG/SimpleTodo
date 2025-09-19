@@ -58,6 +58,7 @@ function App() {
         }}
       >
         <input
+          className="input"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Add a new todo"
@@ -77,12 +78,12 @@ function App() {
           ))
         }
       </div>
-      <h2>Complete Todos</h2>
+      <h2>Completed Todos</h2>
       <div className="todo-container">
         {
           todos.filter(t => t.completed).map(todo => (
             <div key={todo.id} className="todo-card">
-              <span>{todo.title}</span>
+              <span className="completed">{todo.title}</span>
               <button onClick={() => deleteTodo(todo.id)} className="delete"><MdDeleteForever /></button>
             </div>
           ))
