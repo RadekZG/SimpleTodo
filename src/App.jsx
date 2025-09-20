@@ -75,20 +75,20 @@ function App() {
               <motion.div
                 key={todo.id}
                 className="todo-card"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{
+                  duration: 0.4,
+                  scale: { type: "spring", bounce: 0.5 },
+                }}
                 layout
               >
                 <span>{todo.title}</span>
                 <button onClick={() => completeTodo(todo.id)}>
                   <FaRegCheckSquare />
                 </button>
-                <button
-                  onClick={() =>
-                    updateTodo(todo.id, prompt("New title:", todo.title))
-                  }
-                >
+                <button onClick={() => updateTodo(todo.id, prompt("New title:", todo.title))}>
                   <FaEdit />
                 </button>
                 <button onClick={() => deleteTodo(todo.id)}>
@@ -100,14 +100,27 @@ function App() {
       </div>
       <h2>Completed Todos</h2>
       <div className="todo-container">
-        {
-          todos.filter(t => t.completed).map(todo => (
-            <div key={todo.id} className="todo-card">
+        <AnimatePresence>
+          {todos.filter(t => t.completed).map(todo => (
+            <motion.div
+              key={todo.id}
+              className="todo-card"
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{
+                duration: 0.6,
+                scale: { type: "spring", bounce: 0.5 },
+              }}
+              layout
+            >
               <span className="completed">{todo.title}</span>
-              <button onClick={() => deleteTodo(todo.id)} className="delete"><MdDeleteForever /></button>
-            </div>
-          ))
-        }
+              <button onClick={() => deleteTodo(todo.id)} className="delete">
+                <MdDeleteForever />
+              </button>
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
     </div>
   );
