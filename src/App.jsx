@@ -42,7 +42,7 @@ function App() {
   async function addTodo(params) {
     if(!title.trim()) return;
     const {error} = await supabase.from("todos").insert([{title}]);
-    if (error) console.errror(error);
+    if (error) console.error(error);
       else {
     setTitle("")};
     fetchTodos();
@@ -53,7 +53,7 @@ function App() {
       <h1>Todo List</h1>
       <form 
         onSubmit={(e) => {
-          e.preventDefault(); // prevent page refresh
+          e.preventDefault();
           addTodo();
         }}
       >
@@ -84,13 +84,13 @@ function App() {
                 layout
               >
                 <span>{todo.title}</span>
-                <button onClick={() => completeTodo(todo.id)}>
+                <button className="check" onClick={() => completeTodo(todo.id)}>
                   <FaRegCheckSquare />
                 </button>
-                <button onClick={() => updateTodo(todo.id, prompt("New title:", todo.title))}>
+                <button className="edit" onClick={() => updateTodo(todo.id, prompt("New title:", todo.title))}>
                   <FaEdit />
                 </button>
-                <button onClick={() => deleteTodo(todo.id)}>
+                <button className="delete" onClick={() => deleteTodo(todo.id)}>
                   <MdDeleteForever />
                 </button>
               </motion.div>
