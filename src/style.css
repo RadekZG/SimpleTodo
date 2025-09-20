@@ -97,6 +97,8 @@ h2{
 .add{
   cursor: pointer;
   transition: transform .2s;
+  border-radius: 5px;
+  margin-left: 5px;
 }
 
 .add:hover{

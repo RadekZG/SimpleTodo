@@ -3,8 +3,7 @@ import supabase from "./helper/supabaseClient";
 import { FaEdit } from "react-icons/fa";
 import { FaRegCheckSquare } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
-import { motion, AnimatePresence } from "framer-motion";
-
+import { AnimatePresence, motion } from "motion/react";
 
 
 function App() {
@@ -127,3 +126,11 @@ function App() {
 }
 
 export default App;
+
+
+const ball = {
+    width: 100,
+    height: 100,
+    backgroundColor: "#dd00ee",
+    borderRadius: "50%",
+}
