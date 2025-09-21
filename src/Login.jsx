@@ -27,6 +27,6 @@ export default function Login() {
         return (<Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />)
     }
     else {
-        return <App />
+        return <App user={session.user} />;
     }
 }

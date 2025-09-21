@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import supabase from "./helper/supabaseClient";
 import { FaEdit } from "react-icons/fa";
 import { FaRegCheckSquare } from "react-icons/fa";
@@ -6,50 +6,79 @@ import { MdDeleteForever } from "react-icons/md";
 import { AnimatePresence, motion } from "motion/react";
 
 
-function App() {
+function App({user}) {
+  const userId = user.id;
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
 
-  useEffect(() => {
-    fetchTodos();
-  },[])
-
-  async function fetchTodos(params) {
+  const fetchTodos = useCallback(async () => {
     const {data, error} = await supabase
     .from("todos")
     .select("*")
+    .eq("user_id", userId)
     .order("created_at", {ascending:true});
     
     if (error) console.error(error);
     else setTodos(data);
-  }
+  }, [userId]);
+
+
+  useEffect(() => {
+    fetchTodos();
+  }, [fetchTodos]);
 
   async function completeTodo(id) {
-    await supabase.from("todos").update({completed: true}).eq("id", id);
+    await supabase
+    .from("todos")
+    .update({completed: true})
+    .eq("id", id)
+    .eq("user_id", userId)
+
     fetchTodos();
   }
   
   async function deleteTodo(id) {
-    await supabase.from("todos").delete().eq("id", id);
+    await supabase
+    .from("todos")
+    .delete()
+    .eq("id", id)
+    .eq("user_id", userId)
+
     fetchTodos();
   }
 
   async function updateTodo(id, newTitle) {
-    await supabase.from("todos").update({title: newTitle}).eq("id", id);
+    await supabase
+    .from("todos")
+    .update({title: newTitle})
+    .eq("id", id)
+    .eq("user_id", userId)
+
     fetchTodos();
   }
 
   async function addTodo(params) {
     if(!title.trim()) return;
-    const {error} = await supabase.from("todos").insert([{title}]);
+
+    const {error} = await supabase
+    .from("todos")
+    .insert([{title, user_id: userId }]);
+
     if (error) console.error(error);
       else {
     setTitle("")};
     fetchTodos();
   }
 
+  async function handleLogout(params) {
+    const { error } = await supabase.auth.signOut()
+    if (error) console.error("Error logging out:", error)
+    else console.log("Logged out succesfully")
+  }
+
   return (
     <div>
+      <button onClick={handleLogout}>Logout</button>
       <h1>Todo List</h1>
       <form 
         onSubmit={(e) => {
@@ -83,7 +112,9 @@ function App() {
                 }}
                 layout
               >
+                
                 <span>{todo.title}</span>
+                
                 <button className="check" onClick={() => completeTodo(todo.id)}>
                   <FaRegCheckSquare />
                 </button>
