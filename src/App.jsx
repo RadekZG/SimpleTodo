@@ -70,7 +70,7 @@ function App({user}) {
     fetchTodos();
   }
 
-  async function handleLogout(params) {
+  async function Logout(params) {
     const { error } = await supabase.auth.signOut()
     if (error) console.error("Error logging out:", error)
     else console.log("Logged out succesfully")
@@ -78,7 +78,7 @@ function App({user}) {
 
   return (
     <div>
-      <button onClick={handleLogout}>Logout</button>
+      <button onClick={Logout}>Logout</button>
       <h1>Todo List</h1>
       <form 
         onSubmit={(e) => {
