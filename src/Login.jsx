@@ -4,7 +4,7 @@ import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import supabase from "./helper/supabaseClient";
 import App from './App';
-
+import { LoginForm } from './components/LoginForm';
 
 export default function Login() {
     const [session, setSession] = useState(null)
@@ -20,13 +20,16 @@ export default function Login() {
         setSession(session)
         })
 
-        return () => subscription.unsubscribe()
+        return () => subscription.unsubscribe();
     }, [])
 
     if (!session) {
-        return (<Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />)
-    }
-    else {
-        return <App user={session.user} />;
-    }
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gray-50">
+        <LoginForm onLogin={(sess) => setSession(sess)} />
+      </div>
+    );
+  }
+
+  return <App user={session.user} />;
 }
