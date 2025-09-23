@@ -51,6 +51,18 @@
   transition: background-color 0.2s;
 }
 
+.btn-icon{
+  display: flex;
+  width: 24px;
+  justify-content: center;
+  
+}
+
+.logingoogle{
+  flex: 1;
+  text-align: center;
+}
+
 .social-btn:hover {
   background-color: #f3f4f6; 
 }
@@ -165,4 +177,17 @@
   cursor: pointer;
   padding: 0;
   margin-left: 0.5rem;
+}
+
+.signup{
+  width: 100%;
+  border: 1px solid #d1d5db; 
+  border-radius: 0.25rem;
+  padding: 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
 }

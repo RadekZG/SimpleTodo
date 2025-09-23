@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import supabase from "../helper/supabaseClient"; // adjust path
 import  "./LoginForm.css"
+import { FcGoogle } from "react-icons/fc";
 
 export function LoginForm({ onLogin, className }) {
   const [email, setEmail] = useState("");
@@ -52,7 +53,15 @@ export function LoginForm({ onLogin, className }) {
 
       <div className="social-buttons">
         <button onClick={handleGithubLogin} className="social-btn">Login with Github</button>
-        <button type="button" onClick={handleGoogleLogin} className="social-btn">Login with Google</button>
+        <button
+        type="button"
+        onClick={handleGoogleLogin}
+        className="social-btn"
+        ><span className="btn-icon">
+          <FcGoogle size={24} />
+        </span>
+        <span className="logingoogle">Login with Google</span>
+        </button>
       </div>
       <div className="divider">
         <span>Or continue with</span>
@@ -96,7 +105,7 @@ export function LoginForm({ onLogin, className }) {
       </form>
 
       <p className="signup-text">
-        Don't have an account? <button type="button" onClick={handleSignUp} href="#">Sign up</button>
+        Don't have an account? <button className="signup" type="button" onClick={handleSignUp} href="#">Sign up</button>
       </p>
     </div>
 
