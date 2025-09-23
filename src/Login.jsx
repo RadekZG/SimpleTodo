@@ -11,14 +11,23 @@ export default function Login() {
 
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {
-        setSession(session)
-        })
+        setSession(session);
+        });
 
         const {
-        data: { subscription },
-        } = supabase.auth.onAuthStateChange((_event, session) => {
-        setSession(session)
-        })
+          data: { subscription },
+        } = supabase.auth.onAuthStateChange(async (_event, session) => {
+          setSession(session);
+
+          if (event === "PASSWORD_RECOVERY"){
+            const newPassword = prompt("Enter your new password:");
+            if (newPassword){
+              const {error} = await supabase.auth.updateUser({ password: newPassword });
+              if ( error ) alert(error.message);
+              else alert("Password updated successfully!");
+            };
+          };
+        });
 
         return () => subscription.unsubscribe();
     }, [])
@@ -28,8 +37,8 @@ export default function Login() {
       <div className="flex items-center justify-center min-h-screen bg-gray-50">
         <LoginForm onLogin={(sess) => setSession(sess)} />
       </div>
-    );
-  }
+     );
+    }
 
   return <App user={session.user} />;
 }

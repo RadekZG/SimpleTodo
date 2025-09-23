@@ -23,7 +23,16 @@ export function LoginForm({ onLogin, className }) {
 
   const handleGithubLogin = async () => {
     await supabase.auth.signInWithOAuth({provider: "github"})
-  }
+  };
+
+  const handleForgotPassword = async () => {
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: "http://localhost:5173",
+  });
+
+  if (error) alert(error.message);
+  else alert("Check your email for a password reset link.");
+};
 
   return (
   <div className={`login-container ${className || ""}`}>
@@ -56,7 +65,7 @@ export function LoginForm({ onLogin, className }) {
         <div className="form-group">
           <div className="label-row">
             <label htmlFor="password">Password</label>
-            <a href="#">Forgot your password?</a>
+            <a type="button" onClick={handleForgotPassword} href="#">Forgot your password?</a>
           </div>
           <input
             id="password"
