@@ -21,6 +21,10 @@ export function LoginForm({ onLogin, className }) {
   
   };
 
+  const handleGithubLogin = async () => {
+    await supabase.auth.signInWithOAuth({provider: "github"})
+  }
+
   return (
   <div className={`login-container ${className || ""}`}>
     <div className="login-card">
@@ -28,7 +32,7 @@ export function LoginForm({ onLogin, className }) {
       <p className="login-subtitle">Login with your Apple or Google account</p>
 
       <div className="social-buttons">
-        <button className="social-btn">Login with Apple</button>
+        <button onClick={handleGithubLogin} className="social-btn">Login with Github</button>
         <button type="button" onClick={handleGoogleLogin} className="social-btn">Login with Google</button>
       </div>
       <div className="divider">
