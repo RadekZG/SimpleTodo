@@ -180,6 +180,17 @@ h2{
   text-decoration: line-through;
 }
 
-.completed{
-  
+.logout{
+  border-radius: 7px;
+  transition: transform .2s;
+}
+
+.logout:hover{
+  transform: scale(1.1);
+  box-shadow: 
+  rgba(0, 0, 0, 0.15) 0px 20px 25px,
+  rgba(0, 0, 0, 0.08) 0px -6px 15px,
+  rgba(0, 0, 0, 0.08) 0px 2px 3px,
+  rgba(0, 0, 0, 0.10) 0px 6px 7px,
+  rgba(0, 0, 0, 0.05) 0px -1px 2px;
 }

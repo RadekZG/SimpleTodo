@@ -16,6 +16,11 @@ export function LoginForm({ onLogin, className }) {
     else onLogin(data.session);
   };
 
+  const handleGoogleLogin = async () => {
+    await supabase.auth.signInWithOAuth({ provider: "google" });
+  
+  };
+
   return (
   <div className={`login-container ${className || ""}`}>
     <div className="login-card">
@@ -24,9 +29,8 @@ export function LoginForm({ onLogin, className }) {
 
       <div className="social-buttons">
         <button className="social-btn">Login with Apple</button>
-        <button className="social-btn">Login with Google</button>
+        <button type="button" onClick={handleGoogleLogin} className="social-btn">Login with Google</button>
       </div>
-
       <div className="divider">
         <span>Or continue with</span>
         <hr />

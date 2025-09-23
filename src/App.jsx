@@ -78,7 +78,7 @@ function App({user}) {
 
   return (
     <div>
-      <button onClick={Logout}>Logout</button>
+      <button className="logout" onClick={Logout}>Logout</button>
       <h1>Todo List</h1>
       <form 
         onSubmit={(e) => {
