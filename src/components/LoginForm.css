@@ -158,3 +158,11 @@
 .footer-text a:hover {
   text-decoration: underline;
 }
+
+.showpassword{
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 0.5rem;
+}

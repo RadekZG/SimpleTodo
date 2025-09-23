@@ -5,6 +5,7 @@ import  "./LoginForm.css"
 export function LoginForm({ onLogin, className }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,6 +17,15 @@ export function LoginForm({ onLogin, className }) {
     else onLogin(data.session);
   };
 
+  const handleSignUp = async() => {
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password
+    });
+    if (error) alert(error.message)
+    else alert("Account created! Check your email for confirmation.")
+  }
+  
   const handleGoogleLogin = async () => {
     await supabase.auth.signInWithOAuth({ provider: "google" });
   
@@ -38,7 +48,7 @@ export function LoginForm({ onLogin, className }) {
   <div className={`login-container ${className || ""}`}>
     <div className="login-card">
       <h2 className="login-title">Welcome back</h2>
-      <p className="login-subtitle">Login with your Apple or Google account</p>
+      <p className="login-subtitle">Login with your Github or Google account</p>
 
       <div className="social-buttons">
         <button onClick={handleGithubLogin} className="social-btn">Login with Github</button>
@@ -69,18 +79,24 @@ export function LoginForm({ onLogin, className }) {
           </div>
           <input
             id="password"
-            type="password"
+            type={showPassword ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
+          <button
+          className="showpassword"
+          type="button"
+          onClick={() => setShowPassword(prev => !prev)}
+          >{showPassword ? "Hide" : "Show"}
+          </button>
         </div>
 
         <button type="submit" className="submit-btn">Login</button>
       </form>
 
       <p className="signup-text">
-        Don't have an account? <a href="#">Sign up</a>
+        Don't have an account? <button type="button" onClick={handleSignUp} href="#">Sign up</button>
       </p>
     </div>
 
