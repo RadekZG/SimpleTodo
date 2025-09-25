@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import supabase from "../helper/supabaseClient"; // adjust path
 import  "./LoginForm.css"
 import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa6";
 
 export function LoginForm({ onLogin, className }) {
   const [email, setEmail] = useState("");
@@ -52,15 +53,24 @@ export function LoginForm({ onLogin, className }) {
       <p className="login-subtitle">Login with your Github or Google account</p>
 
       <div className="social-buttons">
-        <button onClick={handleGithubLogin} className="social-btn">Login with Github</button>
+        <button
+          onClick={handleGithubLogin}
+          className="button">
+          <i className="btnlogo">
+            <FaGithub size={20} />
+          </i>
+          <span className="btntext">
+            Login with Github
+          </span>
+        </button>
         <button
         type="button"
         onClick={handleGoogleLogin}
-        className="social-btn"
-        ><span className="btn-icon">
-          <FcGoogle size={24} />
+        className="button"
+        ><span className="btnlogo">
+          <FcGoogle size={21.5} />
         </span>
-        <span className="logingoogle">Login with Google</span>
+        <span className="btntext">Login with Google</span>
         </button>
       </div>
       <div className="divider">
@@ -105,7 +115,7 @@ export function LoginForm({ onLogin, className }) {
       </form>
 
       <p className="signup-text">
-        Don't have an account? <button className="signup" type="button" onClick={handleSignUp} href="#">Sign up</button>
+        Don't have an account ? <button className="signup" type="button" onClick={handleSignUp} href="#">Sign up</button>
       </p>
     </div>
 
