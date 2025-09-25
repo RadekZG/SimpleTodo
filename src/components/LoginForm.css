@@ -35,43 +35,7 @@ body{
   margin-top: 0.25rem; 
 }
 
-.social-btn {
-  width: 90%;
-  border: 1px solid #d1d5db; 
-  border-radius: 0.5rem;
-  padding: 0.5rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.social-btn:hover {
-  box-shadow: 
-  rgba(0, 0, 0, 0.15) 0px 20px 25px,
-  rgba(0, 0, 0, 0.08) 0px -6px 15px,
-  rgba(0, 0, 0, 0.08) 0px 2px 3px,
-  rgba(0, 0, 0, 0.10) 0px 6px 7px,
-  rgba(0, 0, 0, 0.05) 0px -1px 2px;
-  transform: scale(0.975); 
-}
-
-.btn-icon{
-  display: flex;
-  width: 24px;
-  justify-content: center;
-  
-}
-
 .logingithub{
-  display: flex;
-  text-align: center;
-  outline: none;
-}
-
-.logingoogle{
   display: flex;
   text-align: center;
   outline: none;
@@ -217,14 +181,15 @@ body{
   transform: scale(0.975);
 }
 
+
+/* Login Buttons */
+
 .social-buttons {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 0.1rem;
   margin-top: auto 0; 
 }
-
-/* Login Buttons */
 
 .button{
   position: relative;
@@ -233,20 +198,14 @@ body{
   align-items: center;
   cursor: pointer;
   outline: none;
-  border: 1px solid #808080;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db; 
   width: 100%;
-  background-color: transparent;
-  min-height: 80%;
-}
-
-.button::before {
-  content: "";
-  width: 1px;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  bottom: 0;
-  background-color: red;
+  background-color: white;
+  min-height: 90%;
+  height: 110%;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3;
 }
 
 .button::after {
@@ -255,6 +214,15 @@ body{
   content: "";
 }
 
+.button:hover {
+  box-shadow: 
+  rgba(0, 0, 0, 0.15) 0px 20px 25px,
+  rgba(0, 0, 0, 0.08) 0px -6px 15px,
+  rgba(0, 0, 0, 0.08) 0px 2px 3px,
+  rgba(0, 0, 0, 0.10) 0px 6px 7px,
+  rgba(0, 0, 0, 0.05) 0px -1px 2px;
+  transform: scale(0.975); 
+}
 
 .btnlogo{
   flex-shrink: 0;
@@ -266,7 +234,6 @@ body{
   text-overflow: ellipsis;
   min-width: 0;
   text-align: center;
-  border: 1px solid blue;
 }
 
 
