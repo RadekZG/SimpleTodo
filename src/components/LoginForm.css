@@ -1,8 +1,11 @@
-body{
-  min-height: 100vh;
+html,body{
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 /* Container */
+
 .login-container {
   display: flex;
   flex-direction: column;
@@ -13,6 +16,7 @@ body{
 }
 
 /* Card */
+
 .login-card {
   background-color: white;
   padding: 1.5rem; 
@@ -33,12 +37,6 @@ body{
   color: #6b7280; 
   font-size: 0.875rem; 
   margin-top: 0.25rem; 
-}
-
-.logingithub{
-  display: flex;
-  text-align: center;
-  outline: none;
 }
 
 .divider {
@@ -90,6 +88,7 @@ body{
 }
 
 /* Label row */
+
 .label-row {
   display: flex;
   justify-content: space-between;
@@ -106,8 +105,9 @@ body{
   text-decoration: underline;
 }
 
-/* Submit button */
-.submit-btn {
+/* Login button */
+
+.login-btn {
   background-color: #3b82f6;
   color: white;
   padding: 0.5rem 0;
@@ -116,7 +116,7 @@ body{
   transition: transform 0.3s;
 }
 
-.submit-btn:hover {
+.login-btn:hover {
   box-shadow: 
   rgba(0, 0, 0, 0.15) 0px 20px 25px,
   rgba(0, 0, 0, 0.08) 0px -6px 15px,
@@ -158,6 +158,8 @@ body{
   margin-left: 0.5rem;
 }
 
+/* Signup button */
+
 .signup{
   width: 100%;
   border: 1px solid #d1d5db; 
@@ -181,8 +183,7 @@ body{
   transform: scale(0.975);
 }
 
-
-/* Login Buttons */
+/* Socials Buttons */
 
 .social-buttons {
   display: grid;
@@ -202,9 +203,8 @@ body{
   border: 1px solid #d1d5db; 
   width: 100%;
   background-color: white;
-  min-height: 90%;
-  height: 110%;
-  margin-bottom: 0.5rem;
+  min-height: 2.2rem;
+  height: 100%;
   transition: transform 0.3;
 }
 

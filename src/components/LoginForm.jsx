@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import supabase from "../helper/supabaseClient"; // adjust path
+import supabase from "../helper/supabaseClient"; 
 import  "./LoginForm.css"
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
@@ -111,7 +111,7 @@ export function LoginForm({ onLogin, className }) {
           </button>
         </div>
 
-        <button type="submit" className="submit-btn">Login</button>
+        <button type="submit" className="login-btn">Login</button>
       </form>
 
       <p className="signup-text">
