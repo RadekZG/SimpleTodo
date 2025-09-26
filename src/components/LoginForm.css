@@ -12,7 +12,8 @@ html,body{
   gap: 1.5rem;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 90vh;
+  margin: 0 1rem;
 }
 
 /* Card */
@@ -113,7 +114,7 @@ html,body{
   padding: 0.5rem 0;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0,3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .login-btn:hover {
@@ -167,7 +168,7 @@ html,body{
   align-items: center;
   background-color: white;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0,3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .signup:hover{
@@ -179,52 +180,48 @@ html,body{
 
 /* Socials Buttons */
 
+/* Social login buttons container */
 .social-buttons {
-  display: grid;
-  grid-template-columns: repeat(2,minmax(0,1fr));
-  gap: 0.3rem;
-  margin-top: auto 0; 
-}
-
-.button{
-  position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  outline: none;
-  border-radius: 0.5rem;
-  border: 1px solid #d1d5db; 
+  flex-direction: column; /* stack vertically; change to row if needed */
+  gap: 12px; /* space between buttons */
   width: 100%;
-  background-color: white;
-  min-height: 2.2rem;
-  height: 100%;
-  transition: transform 0.3s, box-shadow 0,3s;
 }
 
-.button::after {
-  flex-grow: 1;
-  max-width: calc(2em + 20px);
-  content: "";
+/* Social login button */
+.button {
+  display: flex;
+  align-items: center;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  width: 100%;
+  min-height: 2.5rem;
+  background-color: white;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 0.5rem 1rem;
 }
 
 .button:hover {
   box-shadow: 
-  rgba(0, 0, 0, 0.16) 0px 3px 10px,
-  rgba(0, 0, 0, 0.23) 0px 3px 10px;
+    rgba(0, 0, 0, 0.16) 0px 3px 10px,
+    rgba(0, 0, 0, 0.23) 0px 3px 10px;
   transform: scale(1.005);
 }
 
-.btnlogo{
-  flex-shrink: 0;
-  margin-right: 20px;
+/* Fixed space for logo */
+.btnlogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
 }
 
-.btntext{
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  min-width: 0;
+/* Text centered in remaining space */
+.btntext {
+  flex: 1;
   text-align: center;
+  font-size: 0.9rem;
+  white-space: nowrap;
 }
-
 

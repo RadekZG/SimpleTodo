@@ -59,9 +59,7 @@ export function LoginForm({ onLogin, className }) {
           <i className="btnlogo">
             <FaGithub size={20} />
           </i>
-          <span className="btntext">
-            Login with Github
-          </span>
+          <span className="btntext">Login with Github</span>
         </button>
         <button
         type="button"
