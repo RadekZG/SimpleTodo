@@ -1,12 +1,15 @@
+*{
+  font-family: 'Manrope';
+}
+
 html,body{
   margin: 0;
   overflow-x: hidden;
-  
 }
 
 /* Container */
 
-.login-container {
+.login-container{
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -18,7 +21,7 @@ html,body{
 
 /* Card */
 
-.login-card {
+.login-card{
   background-color: white;
   padding: 1.5rem; 
   border-radius: 1rem; 
@@ -27,26 +30,26 @@ html,body{
   max-width: 24rem; 
 }
 
-.login-title {
+.login-title{
   font-size: 1.25rem; 
   font-weight: 600; 
   text-align: center;
 }
 
-.login-subtitle {
+.login-subtitle{
   text-align: center;
   color: #6b7280; 
   font-size: 0.875rem; 
   margin-top: 0.25rem; 
 }
 
-.divider {
+.divider{
   position: relative;
   text-align: center;
   margin: 1rem 0; 
 }
 
-.divider span {
+.divider span{
   background-color: white;
   padding: 0 0.5rem;
   color: #6b7280;
@@ -55,7 +58,7 @@ html,body{
   z-index: 1;
 }
 
-.divider hr {
+.divider hr{
   position: absolute;
   top: 50%;
   left: 0;
@@ -65,18 +68,18 @@ html,body{
   z-index: 0;
 }
 
-.login-form {
+.login-form{
   display: flex;
   flex-direction: column;
   gap: 1rem; 
 }
 
-.form-group {
+.form-group{
   display: flex;
   flex-direction: column;
 }
 
-.form-group input {
+.form-group input{
   border: 1px solid #d1d5db;
   border-radius: 0.5rem;
   padding: 0.5rem 0.75rem;
@@ -84,31 +87,31 @@ html,body{
   transition: box-shadow 0.2s;
 }
 
-.form-group input:focus {
+.form-group input:focus{
   box-shadow: 0 0 0 2px #60a5fa; 
 }
 
 /* Label row */
 
-.label-row {
+.label-row{
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.25rem;
 }
 
-.label-row a {
+.label-row a{
   font-size: 0.875rem;
   color: #3b82f6;
   text-decoration: none;
 }
 
-.label-row a:hover {
+.label-row a:hover{
   text-decoration: underline;
 }
 
 /* Login button */
 
-.login-btn {
+.login-btn{
   background-color: #3b82f6;
   color: white;
   padding: 0.5rem 0;
@@ -117,43 +120,66 @@ html,body{
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.login-btn:hover {
+.login-btn:hover{
   box-shadow: 
   rgba(0, 0, 0, 0.16) 0px 3px 6px,
   rgba(0, 0, 0, 0.23) 0px 3px 6px;
   transform: scale(1.01);
 }
 
-.signup-text {
+.signup-text{
   text-align: center;
   font-size: 0.875rem;
   margin-top: 1rem; 
 }
 
-.signup-text a {
+.signup-text a{
   color: #3b82f6;
   text-decoration: none;
 }
 
-.signup-text a:hover {
+.signup-text a:hover{
   text-decoration: underline;
 }
 
-.footer-text {
+.footer-text{
   text-align: center;
   font-size: 0.75rem; 
   color: #6b7280;
 }
+
 .footer-text a:hover {
   text-decoration: underline;
 }
 
+.password-wrapper {
+  position: relative;
+  width: 100%; /* full width of input */
+}
+
+/* Password input */
+.password-wrapper input {
+  width: 100%;
+  padding-right: 2.5rem; /* space for the eye icon */
+  box-sizing: border-box;
+}
+
+.password{
+  position: relative;
+}
+
 .showpassword{
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
-  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Signup button */
@@ -180,16 +206,14 @@ html,body{
 
 /* Socials Buttons */
 
-/* Social login buttons container */
-.social-buttons {
+.social-buttons{
   display: flex;
-  flex-direction: column; /* stack vertically; change to row if needed */
-  gap: 12px; /* space between buttons */
+  flex-direction: column; 
+  gap: 5px;
   width: 100%;
 }
 
-/* Social login button */
-.button {
+.button{
   display: flex;
   align-items: center;
   border-radius: 0.5rem;
@@ -202,26 +226,24 @@ html,body{
   padding: 0.5rem 1rem;
 }
 
-.button:hover {
+.button:hover{
   box-shadow: 
     rgba(0, 0, 0, 0.16) 0px 3px 10px,
     rgba(0, 0, 0, 0.23) 0px 3px 10px;
   transform: scale(1.005);
 }
 
-/* Fixed space for logo */
-.btnlogo {
+.btnlogo{
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 12px;
 }
 
-/* Text centered in remaining space */
-.btntext {
+.btntext{
   flex: 1;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   white-space: nowrap;
 }
 

@@ -3,6 +3,8 @@ import supabase from "../helper/supabaseClient";
 import  "./LoginForm.css"
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { IoEyeOutline } from "react-icons/io5";
 
 export function LoginForm({ onLogin, className }) {
   const [email, setEmail] = useState("");
@@ -94,19 +96,22 @@ export function LoginForm({ onLogin, className }) {
             <label htmlFor="password">Password</label>
             <a type="button" onClick={handleForgotPassword} href="#">Forgot your password?</a>
           </div>
-          <input
-            id="password"
-            type={showPassword ? "text" : "password"}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button
-          className="showpassword"
-          type="button"
-          onClick={() => setShowPassword(prev => !prev)}
-          >{showPassword ? "Hide" : "Show"}
-          </button>
+          <div className="password-wrapper">
+            <input
+              className="password"
+              id="password"
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button
+            className="showpassword"
+            type="button"
+            onClick={() => setShowPassword(prev => !prev)}
+            >{showPassword ? <IoEyeOutline size={18} /> : <FaRegEyeSlash size={18} />}
+            </button>
+          </div>
         </div>
 
         <button type="submit" className="login-btn">Login</button>
@@ -116,10 +121,6 @@ export function LoginForm({ onLogin, className }) {
         Don't have an account ? <button className="signup" type="button" onClick={handleSignUp} href="#">Sign up</button>
       </p>
     </div>
-
-    <p className="footer-text">
-      By clicking continue, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
-    </p>
   </div>
 );
 
