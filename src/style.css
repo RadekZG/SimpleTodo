@@ -10,7 +10,7 @@ body {
   display: block;
   height: auto;
   padding: 20px;  
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition:opacity 0.3s ease;
 }
 
 .todo-card-enter {
