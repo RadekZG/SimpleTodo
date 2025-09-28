@@ -60,6 +60,7 @@ body {
   border-radius: 6px;
   text-align: center;
   font-size: 19px;
+  border: 2px solid black;
 }
 
 h1 {
@@ -116,6 +117,7 @@ h2 {
   align-items: center;
   width: 29px;
   height: 22px;
+  border: 2px solid black;
 }
 
 .add {
@@ -123,6 +125,7 @@ h2 {
   transition: transform 0.2s;
   border-radius: 5px;
   margin-left: 5px;
+  border: 2px solid black;
 }
 
 .add:hover {
@@ -136,7 +139,6 @@ h2 {
 }
 
 .check {
-  
   transition: transform 0.2s; /* Animation */
 }
 
@@ -212,6 +214,7 @@ h2 {
 }
 
 .logout {
+  border: 2px solid black;
   border-radius: 7px;
   transition: transform 0.2s;
 }
