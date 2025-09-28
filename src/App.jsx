@@ -92,7 +92,7 @@ function App({user}) {
           onChange={(e) => setTitle(e.target.value)}
           placeholder="Add a new todo"
         />
-        <input className="add" type="submit" value="Add" />
+        <button className="add" type="submit" value="Add">Add</button>
       </form>
       <h2> Incomplete Todos</h2>
       <div className="todo-container">
@@ -107,22 +107,22 @@ function App({user}) {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0 }}
                 transition={{
-                  duration: 0.4,
-                  scale: { type: "spring", bounce: 0.5 },
+                  duration: 0.1,
+                  scale: { type: "spring", bounce: 0.3 },
                 }}
                 layout
               >
                 
                 <span>{todo.title}</span>
                 
-                <button className="check" onClick={() => completeTodo(todo.id)}>
-                  <FaRegCheckSquare />
+                <button className="check" aria-label="Mark task as complete" onClick={() => completeTodo(todo.id)}>
+                  <FaRegCheckSquare width={20} height={20} />
                 </button>
-                <button className="edit" onClick={() => updateTodo(todo.id, prompt("New title:", todo.title))}>
-                  <FaEdit />
+                <button className="edit" aria-label="Edit task" onClick={() => updateTodo(todo.id, prompt("New title:", todo.title))}>
+                  <FaEdit width={20} height={20}  />
                 </button>
-                <button className="delete" onClick={() => deleteTodo(todo.id)}>
-                  <MdDeleteForever />
+                <button className="delete" aria-label="Delete task" onClick={() => deleteTodo(todo.id)}>
+                  <MdDeleteForever width={20} height={20}  />
                 </button>
               </motion.div>
             ))}
@@ -139,14 +139,14 @@ function App({user}) {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0 }}
               transition={{
-                duration: 0.6,
-                scale: { type: "spring", bounce: 0.5 },
+                duration: 0.1,
+                scale: { type: "spring", bounce: 0.3 },
               }}
               layout
             >
               <span className="completed">{todo.title}</span>
-              <button onClick={() => deleteTodo(todo.id)} className="delete">
-                <MdDeleteForever />
+              <button  aria-label="Delete task"  onClick={() => deleteTodo(todo.id)} className="delete">
+                <MdDeleteForever width={20} height={20}  />
               </button>
             </motion.div>
           ))}
@@ -157,3 +157,4 @@ function App({user}) {
 }
 
 export default App;
+

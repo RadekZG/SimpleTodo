@@ -1,16 +1,37 @@
 body {
-  --color: #E1E1E1;
-  background-color: #F3F3F3;
-  background-image: 
-    linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
-    linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+  --color: #e1e1e1;
+  background-color: #f3f3f3;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
   background-size: 55px 55px;
   margin: 0;
-  font-family: 'Manrope';
+  font-family: "Manrope";
   display: block;
   height: auto;
-  padding: 20px;  
-  transition:opacity 0.3s ease;
+  padding: 20px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .todo-card-enter {
@@ -33,30 +54,29 @@ body {
   transform: translateY(20px);
 }
 
-.input{
+.input {
   height: 30px;
   width: 220px;
   border-radius: 6px;
-  text-align:center;
+  text-align: center;
   font-size: 19px;
-
 }
 
-h1{
+h1 {
   display: flex;
-  font-family: 'Manrope';
+  font-family: "Manrope";
   justify-content: center;
   margin-top: 1rem;
   font-size: 3rem;
 }
 
-form{
+form {
   display: flex;
   justify-content: center;
 }
 
-h2{
-  font-family: 'Manrope';
+h2 {
+  font-family: "Manrope";
   display: flex;
   justify-content: center;
 }
@@ -73,7 +93,7 @@ h2{
   border-radius: 8px;
   padding: 14px 18px;
   margin: 10px 0;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   min-height: 70px;
@@ -91,75 +111,67 @@ h2{
   align-self: center;
   border-radius: 5px;
   cursor: pointer;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 29px;
+  height: 22px;
 }
 
-.add{
+.add {
   cursor: pointer;
-  transition: transform .2s;
+  transition: transform 0.2s;
   border-radius: 5px;
   margin-left: 5px;
 }
 
-.add:hover{
+.add:hover {
   transform: scale(1.2);
 }
 
-.add:hover{
-  box-shadow: 
-  rgba(0, 0, 0, 0.15) 0px 20px 25px,
-  rgba(0, 0, 0, 0.08) 0px -6px 15px,
-  rgba(0, 0, 0, 0.08) 0px 2px 3px,
-  rgba(0, 0, 0, 0.10) 0px 6px 7px,
-  rgba(0, 0, 0, 0.05) 0px -1px 2px;
+.add:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 25px,
+    rgba(0, 0, 0, 0.08) 0px -6px 15px, rgba(0, 0, 0, 0.08) 0px 2px 3px,
+    rgba(0, 0, 0, 0.1) 0px 6px 7px, rgba(0, 0, 0, 0.05) 0px -1px 2px;
+}
+
+.check {
   
+  transition: transform 0.2s; /* Animation */
 }
 
-.check{
-  transition: transform .2s; /* Animation */
-}
-
-.check:hover{
-  box-shadow: 
-  rgba(0, 0, 0, 0.15) 0px 20px 25px,
-  rgba(0, 0, 0, 0.08) 0px -6px 15px,
-  rgba(0, 0, 0, 0.08) 0px 2px 3px,
-  rgba(0, 0, 0, 0.10) 0px 6px 7px,
-  rgba(0, 0, 0, 0.05) 0px -1px 2px;
+.check:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 25px,
+    rgba(0, 0, 0, 0.08) 0px -6px 15px, rgba(0, 0, 0, 0.08) 0px 2px 3px,
+    rgba(0, 0, 0, 0.1) 0px 6px 7px, rgba(0, 0, 0, 0.05) 0px -1px 2px;
   transform: scale(1.2);
 }
 
-.edit{
-  transition: transform .2s; /* Animation */
+.edit {
+  transition: transform 0.2s; /* Animation */
 }
 
-.edit:hover{
-  box-shadow: 
-  rgba(0, 0, 0, 0.15) 0px 20px 25px,
-  rgba(0, 0, 0, 0.08) 0px -6px 15px,
-  rgba(0, 0, 0, 0.08) 0px 2px 3px,
-  rgba(0, 0, 0, 0.10) 0px 6px 7px,
-  rgba(0, 0, 0, 0.05) 0px -1px 2px;
+.edit:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 25px,
+    rgba(0, 0, 0, 0.08) 0px -6px 15px, rgba(0, 0, 0, 0.08) 0px 2px 3px,
+    rgba(0, 0, 0, 0.1) 0px 6px 7px, rgba(0, 0, 0, 0.05) 0px -1px 2px;
   transform: scale(1.2);
 }
 
-.delete{
-  transition: transform .2s; /* Animation */
+.delete {
+  transition: transform 0.2s; /* Animation */
 }
 
-.delete:hover{
-  box-shadow: 
-  rgba(0, 0, 0, 0.15) 0px 20px 25px,
-  rgba(0, 0, 0, 0.08) 0px -6px 15px,
-  rgba(0, 0, 0, 0.08) 0px 2px 3px,
-  rgba(0, 0, 0, 0.10) 0px 6px 7px,
-  rgba(0, 0, 0, 0.05) 0px -1px 2px;
+.delete:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 25px,
+    rgba(0, 0, 0, 0.08) 0px -6px 15px, rgba(0, 0, 0, 0.08) 0px 2px 3px,
+    rgba(0, 0, 0, 0.1) 0px 6px 7px, rgba(0, 0, 0, 0.05) 0px -1px 2px;
   transform: scale(1.2);
 }
 
 /* Github-corners by tholman */
 
-.github-corner{
+.github-corner {
   position: fixed;
   top: 0;
   right: 0;
@@ -167,39 +179,46 @@ h2{
   z-index: 1000;
 }
 
-.github-corner:hover .octo-arm{
-  animation:octocat-wave 560ms ease-in-out;  
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
 }
 
-@keyframes octocat-wave{
-  0%,100%{transform:rotate(0)}
-  20%,60%{transform:rotate(-25deg)}
-  40%,80%{transform:rotate(10deg)}}
-
-@media (max-width:500px){
-  .github-corner:hover .octo-arm{
-    animation:none;
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
   }
-  .github-corner .octo-arm{
-    animation:octocat-wave 560ms ease-in-out;
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
   }
 }
 
-.completed{
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+.completed {
   text-decoration: line-through;
 }
 
-.logout{
+.logout {
   border-radius: 7px;
-  transition: transform .2s;
+  transition: transform 0.2s;
 }
 
-.logout:hover{
+.logout:hover {
   transform: scale(1.1);
-  box-shadow: 
-  rgba(0, 0, 0, 0.15) 0px 20px 25px,
-  rgba(0, 0, 0, 0.08) 0px -6px 15px,
-  rgba(0, 0, 0, 0.08) 0px 2px 3px,
-  rgba(0, 0, 0, 0.10) 0px 6px 7px,
-  rgba(0, 0, 0, 0.05) 0px -1px 2px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 20px 25px,
+    rgba(0, 0, 0, 0.08) 0px -6px 15px, rgba(0, 0, 0, 0.08) 0px 2px 3px,
+    rgba(0, 0, 0, 0.1) 0px 6px 7px, rgba(0, 0, 0, 0.05) 0px -1px 2px;
 }
