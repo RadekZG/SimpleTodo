@@ -169,6 +169,7 @@ html,body{
 }
 
 .showpassword{
+  color: black;
   position: absolute;
   right: 0.75rem;
   top: 50%;
@@ -214,6 +215,7 @@ html,body{
 }
 
 .button{
+  color: black;
   display: flex;
   align-items: center;
   border-radius: 0.5rem;
