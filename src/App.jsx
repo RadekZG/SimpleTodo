@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import supabase from "./helper/supabaseClient";
-import { FaEdit } from "react-icons/fa";
+import { RiEditLine } from "react-icons/ri";
 import { FaRegCheckSquare } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import { AnimatePresence, motion } from "motion/react";
@@ -116,13 +116,13 @@ function App({user}) {
                 <span>{todo.title}</span>
                 
                 <button className="check" aria-label="Mark task as complete" onClick={() => completeTodo(todo.id)}>
-                  <FaRegCheckSquare width={20} height={20} />
+                  <FaRegCheckSquare />
                 </button>
                 <button className="edit" aria-label="Edit task" onClick={() => updateTodo(todo.id, prompt("New title:", todo.title))}>
-                  <FaEdit width={20} height={20}  />
+                  <RiEditLine />
                 </button>
                 <button className="delete" aria-label="Delete task" onClick={() => deleteTodo(todo.id)}>
-                  <MdDeleteForever width={20} height={20}  />
+                  <MdDeleteForever />
                 </button>
               </motion.div>
             ))}
