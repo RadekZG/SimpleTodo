@@ -95,11 +95,12 @@ function App({user}) {
         <button className="add" type="submit" value="Add">Add</button>
       </form>
       <div className="texts">
-        <h2> Incomplete Todos</h2>
-        <h2>Completed Todos</h2>
+        
+       
       </div>
       <div className="containers">
         <div className="todo-container">
+        <h2> Incomplete Todos</h2>
           <AnimatePresence>
             {todos
               .filter(t => !t.completed)
@@ -133,6 +134,7 @@ function App({user}) {
           </AnimatePresence>
         </div>
         <div className="todo-container">
+          <h2>Completed Todos</h2>
           <AnimatePresence>
             {todos.filter(t => t.completed).map(todo => (
               <motion.div
