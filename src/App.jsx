@@ -94,12 +94,47 @@ function App({user}) {
         />
         <button className="add" type="submit" value="Add">Add</button>
       </form>
-      <h2> Incomplete Todos</h2>
-      <div className="todo-container">
-        <AnimatePresence>
-          {todos
-            .filter(t => !t.completed)
-            .map(todo => (
+      <div className="texts">
+        <h2> Incomplete Todos</h2>
+        <h2>Completed Todos</h2>
+      </div>
+      <div className="containers">
+        <div className="todo-container">
+          <AnimatePresence>
+            {todos
+              .filter(t => !t.completed)
+              .map(todo => (
+                <motion.div
+                  key={todo.id}
+                  className="todo-card"
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  transition={{
+                    duration: 0.1,
+                    scale: { type: "spring", bounce: 0.3 },
+                  }}
+                  layout
+                >
+        
+                  <span>{todo.title}</span>
+        
+                  <button className="check" aria-label="Mark task as complete" onClick={() => completeTodo(todo.id)}>
+                    <FaRegCheckSquare />
+                  </button>
+                  <button className="edit" aria-label="Edit task" onClick={() => updateTodo(todo.id, prompt("New title:", todo.title))}>
+                    <RiEditLine />
+                  </button>
+                  <button className="delete" aria-label="Delete task" onClick={() => deleteTodo(todo.id)}>
+                    <MdDeleteForever />
+                  </button>
+                </motion.div>
+              ))}
+          </AnimatePresence>
+        </div>
+        <div className="todo-container">
+          <AnimatePresence>
+            {todos.filter(t => t.completed).map(todo => (
               <motion.div
                 key={todo.id}
                 className="todo-card"
@@ -112,45 +147,14 @@ function App({user}) {
                 }}
                 layout
               >
-                
-                <span>{todo.title}</span>
-                
-                <button className="check" aria-label="Mark task as complete" onClick={() => completeTodo(todo.id)}>
-                  <FaRegCheckSquare />
-                </button>
-                <button className="edit" aria-label="Edit task" onClick={() => updateTodo(todo.id, prompt("New title:", todo.title))}>
-                  <RiEditLine />
-                </button>
-                <button className="delete" aria-label="Delete task" onClick={() => deleteTodo(todo.id)}>
-                  <MdDeleteForever />
+                <span className="completed">{todo.title}</span>
+                <button  aria-label="Delete task"  onClick={() => deleteTodo(todo.id)} className="delete">
+                  <MdDeleteForever width={20} height={20}  />
                 </button>
               </motion.div>
             ))}
-        </AnimatePresence>
-      </div>
-      <h2>Completed Todos</h2>
-      <div className="todo-container">
-        <AnimatePresence>
-          {todos.filter(t => t.completed).map(todo => (
-            <motion.div
-              key={todo.id}
-              className="todo-card"
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0 }}
-              transition={{
-                duration: 0.1,
-                scale: { type: "spring", bounce: 0.3 },
-              }}
-              layout
-            >
-              <span className="completed">{todo.title}</span>
-              <button  aria-label="Delete task"  onClick={() => deleteTodo(todo.id)} className="delete">
-                <MdDeleteForever width={20} height={20}  />
-              </button>
-            </motion.div>
-          ))}
-        </AnimatePresence>
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );
