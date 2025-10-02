@@ -10,6 +10,7 @@ function App({user}) {
   const userId = user.id;
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
+  const [editingId, setEditingId] = useState(null);
 
   const fetchTodos = useCallback(async () => {
     const {data, error} = await supabase
@@ -83,7 +84,14 @@ function App({user}) {
       <form 
         onSubmit={(e) => {
           e.preventDefault();
-          addTodo();
+          if (editingId){
+            updateTodo(editingId, title);
+            setEditingId(null);
+            setTitle("");
+          } else{
+            addTodo();
+          }
+
         }}
       >
         <input
@@ -123,7 +131,13 @@ function App({user}) {
                   <button className="check" aria-label="Mark task as complete" onClick={() => completeTodo(todo.id)}>
                     <FaRegCheckSquare />
                   </button>
-                  <button className="edit" aria-label="Edit task" onClick={() => updateTodo(todo.id, prompt("New title:", todo.title))}>
+                  <button 
+                    className="edit"
+                    aria-label="Edit task"
+                    onClick={() => {
+                    setTitle(todo.title);
+                    setEditingId(todo.id);
+                  }}>
                     <RiEditLine />
                   </button>
                   <button className="delete" aria-label="Delete task" onClick={() => deleteTodo(todo.id)}>
