@@ -7,7 +7,8 @@ import App from './App';
 import { LoginForm } from './components/LoginForm';
 
 export default function Login() {
-    const [session, setSession] = useState(null)
+    const [session, setSession] = useState(null);
+     const [showModal, setShowModal] = useState(null);
 
     useEffect(() => {
         supabase.auth.getSession().then(({ data: { session } }) => {

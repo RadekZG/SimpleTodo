@@ -4,6 +4,7 @@ import { RiEditLine } from "react-icons/ri";
 import { FaRegCheckSquare } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import { AnimatePresence, motion } from "motion/react";
+import LegalModal from "./components/LegalModal";
 
 
 function App({user}) {
@@ -11,13 +12,14 @@ function App({user}) {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
   const [editingId, setEditingId] = useState(null);
+  const [showModal, setShowModal] = useState(null);
 
   const fetchTodos = useCallback(async () => {
     const {data, error} = await supabase
     .from("todos")
     .select("*")
     .eq("user_id", userId)
-    .order("created_at", {ascending:true});
+    .order("created_at", {ascending:false});
     
     if (error) console.error(error);
     else setTodos(data);
@@ -80,7 +82,7 @@ function App({user}) {
   return (
     <div>
       <button className="logout" onClick={Logout}>Logout</button>
-      <h1>Todo List</h1>
+      <h1>Simple Todo</h1>
       <form 
         onSubmit={(e) => {
           e.preventDefault();
@@ -171,10 +173,26 @@ function App({user}) {
             ))}
           </AnimatePresence>
         </div>
+        
       </div>
+      <footer style={{ textAlign: "center", marginTop: "2rem", fontSize: "0.9rem" }}>
+        © 2025 MyToDoApp |{" "}
+        <button onClick={() => setShowModal("terms")} style={linkStyle}>Terms</button> |{" "}
+        <button onClick={() => setShowModal("privacy")} style={linkStyle}>Privacy</button>
+      </footer>
+
+      {showModal && <LegalModal type={showModal} onClose={() => setShowModal(null)} />}
     </div>
   );
 }
+
+const linkStyle = {
+  background: "none",
+  border: "none",
+  color: "#007bff",
+  cursor: "pointer",
+  textDecoration: "underline",
+};
 
 export default App;
 

@@ -5,11 +5,13 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
+import LegalModal from "./LegalModal";
 
 export function LoginForm({ onLogin, className }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showModal, setShowModal] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -120,8 +122,29 @@ export function LoginForm({ onLogin, className }) {
       <p className="signup-text">
         Don't have an account ? <button className="signup" type="button" onClick={handleSignUp} href="#">Sign up</button>
       </p>
+      <footer style={{ textAlign: "center", marginTop: "1rem", fontSize: "0.9rem" }}>
+  © 2025 MyToDoApp |{" "}
+  <button onClick={() => setShowModal("terms")} style={linkStyle}>
+    Terms
+  </button>{" "}
+  |{" "}
+  <button onClick={() => setShowModal("privacy")} style={linkStyle}>
+    Privacy
+  </button>
+</footer>
+
+{showModal && <LegalModal type={showModal} onClose={() => setShowModal(null)} />}
     </div>
   </div>
 );
 
 }
+
+const linkStyle = {
+  background: "none",
+  border: "none",
+  color: "#007bff",
+  cursor: "pointer",
+  textDecoration: "underline",
+};
+
