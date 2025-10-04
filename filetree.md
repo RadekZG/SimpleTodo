@@ -1,32 +1,33 @@
 # File Tree: my-todo-app
 
-Generated on: 9/29/2025, 6:18:08 PM
+Generated on: 10/4/2025, 8:46:15 PM
 Root path: `c:\Users\armsy\OneDrive\Plocha\skillmea-project\my-todo-app`
 
 ```
-├── 📁 .git/ 🚫 (auto-hidden)
-├── 📁 dist/ 🚫 (auto-hidden)
-├── 📁 node_modules/ 🚫 (auto-hidden)
-├── 📁 public/
-│   └── 🖼️ favicon.ico
-├── 📁 src/
-│   ├── 📁 components/
-│   │   ├── 🎨 LoginForm.css
-│   │   └── 📄 LoginForm.jsx
-│   ├── 📁 helper/
-│   │   └── 📄 supabaseClient.js
-│   ├── 📄 App.jsx
-│   ├── 📄 Login.jsx
-│   ├── 📄 main.jsx
-│   └── 🎨 style.css
-├── 🔒 .env 🚫 (auto-hidden)
-├── 🚫 .gitignore
-├── 📖 README.md
-├── 📄 eslint.config.js
-├── 🌐 index.html
-├── 📄 package-lock.json
-├── 📄 package.json
-└── 📄 vite.config.js
+├── .git/ 🚫 (auto-hidden)
+├── dist/ 🚫 (auto-hidden)
+├── node_modules/ 🚫 (auto-hidden)
+├── public/
+│   └── favicon.ico
+├── src/
+│   ├── components/
+│   │   ├── LegalModal.jsx
+│   │   ├── LoginForm.css
+│   │   └── LoginForm.jsx
+│   ├── helper/
+│   │   └── supabaseClient.js
+│   ├── App.jsx
+│   ├── Login.jsx
+│   ├── main.jsx
+│   └── style.css
+├── .env 🚫 (auto-hidden)
+├── .gitignore
+├── README.md
+├── eslint.config.js
+├── index.html
+├── package-lock.json
+├── package.json
+└── vite.config.js
 ```
 
 ---
