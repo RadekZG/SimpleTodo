@@ -31,9 +31,12 @@ A simple **React + Vite** ToDo application with **Supabase backend** that suppor
 
 ## Screenshots 📸
 
-## <img width="1876" height="920" alt="obrázek_2025-09-21_201401896" src="https://github.com/user-attachments/assets/634c82e7-c95c-4fc8-81c7-0e75d3ae265c" />
+## <img width="1876" height="919" alt="image" src="https://github.com/user-attachments/assets/84478e2f-5723-4ab7-b09a-49917afd9c02" />
+## <img width="1875" height="920" alt="image" src="https://github.com/user-attachments/assets/0b0d59ce-3fbf-463c-9f25-97179e2c2253" />
+<img width="372" height="666" alt="image" src="https://github.com/user-attachments/assets/51b49f97-be1f-4c5b-8357-f20c08e98ad4" />
+<img width="373" height="665" alt="image" src="https://github.com/user-attachments/assets/3d2ebe83-26b8-4bd5-9cd9-beffdf29dc8b" />
 
-<img width="1877" height="920" alt="obrázek_2025-09-21_201525535" src="https://github.com/user-attachments/assets/fd8c8c7f-a00c-4fbb-91a3-d637bfd707c2" />
+
 
 ---
 
