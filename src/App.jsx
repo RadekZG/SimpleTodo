@@ -176,7 +176,7 @@ function App({user}) {
         
       </div>
       <footer style={{ textAlign: "center", marginTop: "2rem", fontSize: "0.9rem" }}>
-        © 2025 MyToDoApp |{" "}
+        © 2025 SimpleTodo |{" "}
         <button onClick={() => setShowModal("terms")} style={linkStyle}>Terms</button> |{" "}
         <button onClick={() => setShowModal("privacy")} style={linkStyle}>Privacy</button>
       </footer>

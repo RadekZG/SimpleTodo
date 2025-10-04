@@ -123,7 +123,7 @@ export function LoginForm({ onLogin, className }) {
         Don't have an account ? <button className="signup" type="button" onClick={handleSignUp} href="#">Sign up</button>
       </p>
       <footer style={{ textAlign: "center", marginTop: "1rem", fontSize: "0.9rem" }}>
-  © 2025 MyToDoApp |{" "}
+  © 2025 SimpleTodo |{" "}
   <button onClick={() => setShowModal("terms")} style={linkStyle}>
     Terms
   </button>{" "}
