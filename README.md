@@ -76,16 +76,6 @@ Logout to end your session.
 
 ---
 
-## Future Improvements 🚀
-
-Add due dates and priorities for tasks
-
-Add dark mode
-
-Deploy the app online for public use
-
----
-
 ## License 📄
 
 This project is open source under the MIT License.
